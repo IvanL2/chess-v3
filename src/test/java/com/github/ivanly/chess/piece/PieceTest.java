@@ -2,11 +2,8 @@ package com.github.ivanly.chess.piece;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.github.ivanly.chess.piece.PieceColour;
 
 public class PieceTest {
 	@Autowired
@@ -43,7 +40,7 @@ public class PieceTest {
 	}
 	
 	@Test
-	void testBishop() {
+	public void testBishop() {
 		Piece bishop = new Bishop(PieceColour.BLACK);
 		assertEquals(bishop.getName(), "Bishop");
 		assertEquals(bishop.getColour(), PieceColour.BLACK);
