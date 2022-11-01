@@ -1,10 +1,10 @@
 package com.github.ivanly.chess.piece;
 
 public enum PieceName {
-	PAWN,
 	ROOK,
 	BISHOP,
 	KNIGHT,
+	KING,
 	QUEEN,
-	KING
+	PAWN
 }

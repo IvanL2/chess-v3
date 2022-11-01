@@ -6,13 +6,14 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.github.ivanly.chess.piece.PieceColour;
 
 public class PieceTest {
 	@Autowired
 	PieceFactory factory;
 
 	@Test
-	void testPawn() {
+	public void testPawn() {
 		Piece pawn = new Pawn(PieceColour.BLACK);
 		assertEquals(pawn.getName(), "Pawn");
 		assertEquals(pawn.getColour(), PieceColour.BLACK);
@@ -22,7 +23,7 @@ public class PieceTest {
 	}
 	
 	@Test
-	void testRook() {
+	public void testRook() {
 		Piece rook = new Rook(PieceColour.BLACK);
 		assertEquals(rook.getName(), "Rook");
 		assertEquals(rook.getColour(), PieceColour.BLACK);
@@ -32,7 +33,7 @@ public class PieceTest {
 	}
 	
 	@Test
-	void testKnight() {
+	public void testKnight() {
 		Piece knight = new Knight(PieceColour.BLACK);
 		assertEquals(knight.getName(), "Knight");
 		assertEquals(knight.getColour(), PieceColour.BLACK);
@@ -52,7 +53,7 @@ public class PieceTest {
 	}
 	
 	@Test
-	void testKing() {
+	public void testKing() {
 		Piece king = new King(PieceColour.BLACK);
 		assertEquals(king.getName(), "King");
 		assertEquals(king.getColour(), PieceColour.BLACK);
@@ -62,7 +63,7 @@ public class PieceTest {
 	}
 	
 	@Test
-	void testQueen() {
+	public void testQueen() {
 		Piece queen = new Queen(PieceColour.BLACK);
 		assertEquals(queen.getName(), "Queen");
 		assertEquals(queen.getColour(), PieceColour.BLACK);
