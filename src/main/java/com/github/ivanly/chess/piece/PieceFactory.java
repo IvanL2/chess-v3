@@ -1,7 +1,7 @@
 package com.github.ivanly.chess.piece;
 
-public class PieceFactory {
-	public PieceFactory() {
-		
-	}
+import java.io.Serializable;
+
+public interface PieceFactory extends Serializable {
+	public Piece getPiece(PieceName name, PieceColour colour);
 }

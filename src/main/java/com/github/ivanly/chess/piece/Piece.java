@@ -5,7 +5,7 @@ import java.io.Serializable;
 import com.github.ivanly.chess.board.BoardState;
 
 public interface Piece extends Serializable {
-	public PieceName getName();
+	public String getName();
 	public PieceColour getColour();
 	public boolean isLegalMove(BoardState board);
 }
