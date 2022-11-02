@@ -1,7 +1,6 @@
 package com.github.ivanl2.chess.piece;
 
 import com.github.ivanl2.chess.board.BoardState;
-import com.github.ivanl2.chess.board.EnPassantRule;
 import com.github.ivanl2.chess.board.MoveEvent;
 import com.github.ivanl2.chess.board.MoveListener;
 
