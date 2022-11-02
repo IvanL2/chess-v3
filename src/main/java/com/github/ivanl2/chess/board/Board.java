@@ -65,6 +65,7 @@ public class Board implements Serializable {
 	}
 	
 	public boolean movePiece(int x, int y, int x2, int y2) {
+		if (!gameStarted) throw new GameNotStartedException("Need to start game before moving a piece!");
 		if (checkmate) return false;
 		Piece p = currentBoardState.getPiece(x, y);
 		if (p == null) return false;
