@@ -20,7 +20,7 @@ class Knight implements Piece {
 	}
 
 	@Override
-	public boolean isLegalMove(BoardState board) {
+	public boolean isLegalMove(BoardState board, int x, int y) {
 		// TODO Auto-generated method stub
 		return false;
 	}
