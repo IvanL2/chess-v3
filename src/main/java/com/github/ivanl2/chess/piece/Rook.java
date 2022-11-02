@@ -2,9 +2,10 @@ package com.github.ivanl2.chess.piece;
 
 import com.github.ivanl2.chess.board.BoardState;
 
-class Rook implements Piece {
+class Rook implements Piece, FirstMoveRule {
 	private static final long serialVersionUID = 101L;
 	private final PieceColour colour;
+	private boolean firstMove = true;
 	
 	public Rook(PieceColour colour) {
 		this.colour = colour;
@@ -20,7 +21,7 @@ class Rook implements Piece {
 	}
 
 	@Override
-	public boolean isLegalMove(BoardState board) {
+	public boolean isLegalMove(BoardState board, int x, int y) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -28,5 +29,13 @@ class Rook implements Piece {
 	@Override
 	public String toString() {
 		return "Rook:"+colour;
+	}
+	@Override
+	public boolean isFirstMove() {
+		return firstMove;
+	}
+	@Override
+	public void moved() {
+		firstMove = false;
 	}
 }
