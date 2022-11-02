@@ -4,6 +4,7 @@ import static com.github.ivanl2.chess.piece.PieceColour.*;
 import static com.github.ivanl2.chess.piece.PieceName.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,11 +18,13 @@ public class BoardConfig {
 	private PieceFactory factory;
 	
 	@Bean(name="boardState")
+	@ConditionalOnProperty(prefix = "chess", name="defaultsetup", havingValue = "false")
 	BoardState boardState() {
 		return new BoardStateImpl();
 	}
 	
 	@Bean(name="initialisedBoardState")
+	@ConditionalOnProperty(prefix = "chess", name="defaultsetup", havingValue = "true")
 	BoardState initialisedBoardState() {
 		BoardState b = new BoardStateImpl();
 		b.addPiece(factory.getPiece(ROOK, WHITE), 0, 0);
