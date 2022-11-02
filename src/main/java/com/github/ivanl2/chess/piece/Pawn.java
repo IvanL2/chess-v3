@@ -5,7 +5,7 @@ import com.github.ivanl2.chess.board.EnPassantRule;
 import com.github.ivanl2.chess.board.MoveEvent;
 import com.github.ivanl2.chess.board.MoveListener;
 
-class Pawn implements Piece, FirstMoveRule, EnPassantRule {
+class Pawn implements Piece, FirstMoveRule, HasMoveListener{
 	private static final long serialVersionUID = 100L;
 	private final PieceColour colour;
 	private boolean firstMove = true;
@@ -33,7 +33,7 @@ class Pawn implements Piece, FirstMoveRule, EnPassantRule {
 	}
 
 	@Override
-	public boolean isLegalMove(BoardState board, int x, int y {
+	public boolean isLegalMove(BoardState board, int x, int y) {
 		// TODO Auto-generated method stub
 		return false;
 	}
