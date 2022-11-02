@@ -1,19 +1,8 @@
 package com.github.ivanl2.chess.piece;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.github.ivanl2.chess.piece.Bishop;
-import com.github.ivanl2.chess.piece.King;
-import com.github.ivanl2.chess.piece.Knight;
-import com.github.ivanl2.chess.piece.Pawn;
-import com.github.ivanl2.chess.piece.Piece;
-import com.github.ivanl2.chess.piece.PieceColour;
-import com.github.ivanl2.chess.piece.PieceFactory;
-import com.github.ivanl2.chess.piece.Queen;
-import com.github.ivanl2.chess.piece.Rook;
 
 public class PieceTest {
 	@Autowired
