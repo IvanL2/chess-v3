@@ -16,9 +16,14 @@ public class BoardConfig {
 	@Autowired
 	private PieceFactory factory;
 	
-	@Bean
+	@Bean(name="boardState")
 	BoardState boardState() {
-		BoardState b = new BoardState();
+		return new BoardStateImpl();
+	}
+	
+	@Bean(name="initialisedBoardState")
+	BoardState initialisedBoardState() {
+		BoardState b = new BoardStateImpl();
 		b.addPiece(factory.getPiece(ROOK, WHITE), 0, 0);
 		b.addPiece(factory.getPiece(KNIGHT, WHITE), 1, 0);
 		b.addPiece(factory.getPiece(BISHOP, WHITE), 2, 0);
