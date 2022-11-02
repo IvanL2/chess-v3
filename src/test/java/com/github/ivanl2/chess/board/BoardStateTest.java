@@ -62,7 +62,7 @@ public class BoardStateTest {
 		assertEquals(board.getPiece(1 ,1), p);
 		
 		Piece p2 = mock(Piece.class);
-		board.addPiece(p, 7, 7);
+		board.addPiece(p2, 7, 7);
 		assertTrue(board.movePiece(7, 7, 1, 1));
 		assertEquals(board.getPiece(1, 1), p2);
 		assertNotEquals(board.getPiece(1, 1), p);
