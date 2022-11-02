@@ -2,14 +2,18 @@ package com.github.ivanl2.chess.piece;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
 
 import org.junit.jupiter.api.Test;
+
+import com.github.ivanl2.chess.board.MoveEvent;
 
 public class FirstMoveRuleTest {
 	
 	@Test
 	public void testPawn() {
-		FirstMoveRule pawn = new Pawn(PieceColour.BLACK);
+		Pawn pawn = new Pawn(PieceColour.BLACK);
+		pawn.registerMoveEvent(new MoveEvent());
 		assertTrue(pawn.isFirstMove());
 		pawn.moved();
 		assertFalse(pawn.isFirstMove());

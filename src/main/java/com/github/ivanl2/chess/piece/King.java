@@ -38,7 +38,7 @@ class King implements Piece, FirstMoveRule {
 	}
 	@Override
 	public void moved() {
-		firstMove = true;
+		firstMove = false;
 	}
 
 }

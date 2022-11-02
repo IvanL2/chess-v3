@@ -56,6 +56,7 @@ class Pawn implements Piece, FirstMoveRule, HasMoveListener{
 
 	
 	public void registerMoveEvent(MoveEvent e) {
+		moveEvent = e;
 		e.registerListener(null);
 	}
 }
