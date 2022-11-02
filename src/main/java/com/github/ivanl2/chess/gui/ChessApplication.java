@@ -13,23 +13,24 @@ import javafx.application.Platform;
 import javafx.stage.Stage;
 
 
-public class ChessApplication extends Application implements ApplicationRunner {
+public class ChessApplication extends Application{
 	private ConfigurableApplicationContext applicationContext;
 	
     @Override
     public void init() {
-        applicationContext = new SpringApplicationBuilder(DefaultApplication.class).run();
+    	String[] args = getParameters().getRaw().toArray(new String[0]);
+        applicationContext = new SpringApplicationBuilder(DefaultApplication.class).run(args);
     }
     
     @Override
     public void start(Stage stage) {
-        applicationContext.publishEvent(new StageReadyEvent(stage));
-        stage.setTitle("Chess!");
+        stage.setTitle("test");
         stage.show();
     }
+    
     @Override
     public void stop() {
-        applicationContext.close();
+        this.applicationContext.close();
         Platform.exit();
     }
     static class StageReadyEvent extends ApplicationEvent {
@@ -38,9 +39,9 @@ public class ChessApplication extends Application implements ApplicationRunner {
 		public StageReadyEvent(Stage stage) {
             super(stage);
         }
+		
+	    public Stage getStage() {
+	        return ((Stage) getSource());
+	    }
     }
-	@Override
-	public void run(ApplicationArguments args) throws Exception {
-		Application.launch(args.getSourceArgs());
-	}
 }

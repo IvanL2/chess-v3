@@ -2,14 +2,17 @@ package com.github.ivanl2.chess.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 import com.github.ivanl2.chess.gui.ChessApplication;
 
-@SpringBootApplication
+import javafx.application.Application;
+
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 public class DefaultApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ChessApplication.class, args);
+		Application.launch(ChessApplication.class, args);
 	}
 
 }
