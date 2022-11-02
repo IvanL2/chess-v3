@@ -11,6 +11,17 @@ class BoardStateImpl implements BoardState {
 		board = new Piece[8][8];
 	}
 	
+	BoardStateImpl(Piece[][] pieces) {
+		if (pieces.length != 8) throw new RuntimeException("Cannot create instance, pieces provided do not fit");
+		if (pieces[0].length != 8) throw new RuntimeException("Cannot create instance, pieces provided do not fit");
+		this.board = pieces;
+		for (int i=0;i<8;i++) {
+			for (int j=0;j<8;j++) {
+				if (pieces[i][j] != null) numberOfPieces++;
+			}
+		}
+	}
+	
 	public Piece getPiece(int x, int y) {
 		if (x < 0 || x > 7 || y < 0 || y > 7) throw new OutOfBoardBoundsException("Coordinates passed out of bounds: ("+x+","+y+")");
 		return board[x][y];
@@ -55,5 +66,10 @@ class BoardStateImpl implements BoardState {
 			}
 		}
 		return pieces;
+	}
+	
+	@Override
+	public BoardState clone() {
+		return new BoardStateImpl(board);
 	}
 }

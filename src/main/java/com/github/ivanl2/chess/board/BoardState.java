@@ -11,4 +11,5 @@ public interface BoardState extends Serializable {
 	public void addPiece(Piece p, int x, int y);
 	public boolean removePiece(int x, int y);
 	public boolean movePiece(int x, int y, int x2, int y2);
+	public BoardState clone();
 }
