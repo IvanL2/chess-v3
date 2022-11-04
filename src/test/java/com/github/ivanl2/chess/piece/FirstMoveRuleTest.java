@@ -6,7 +6,7 @@ import static org.mockito.Mockito.mock;
 
 import org.junit.jupiter.api.Test;
 
-import com.github.ivanl2.chess.board.MoveEvent;
+import com.github.ivanl2.chess.board.event.MoveEvent;
 
 public class FirstMoveRuleTest {
 	

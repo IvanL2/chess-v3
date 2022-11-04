@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.github.ivanl2.chess.board.event.MoveEvent;
 import com.github.ivanl2.chess.piece.HasMoveListener;
 import com.github.ivanl2.chess.piece.Piece;
 import com.github.ivanl2.chess.piece.PieceColour;

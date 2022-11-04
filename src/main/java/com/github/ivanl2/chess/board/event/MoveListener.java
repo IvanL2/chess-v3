@@ -1,4 +1,4 @@
-package com.github.ivanl2.chess.board;
+package com.github.ivanl2.chess.board.event;
 
 public abstract class MoveListener implements Listener {
 	@Override
